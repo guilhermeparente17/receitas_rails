@@ -18,6 +18,7 @@ gem 'devise'
 gem 'faker'
 gem 'rails-i18n'
 gem 'kaminari'
+gem 'tty-spinner'
 
 # Use JavaScript with ESM import maps [https://github.com/rails/importmap-rails]
 gem "importmap-rails"

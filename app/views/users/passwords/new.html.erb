@@ -1,16 +1,23 @@
-<h2>Forgot your password?</h2>
+<div class="container">
+  <div class="columns is-centered">
+    <div class="column is-4">
+      <div class="box p-5 mt-5 has-background-link-light is-flex is-justify-content-center is-align-items-center is-flex-direction-column">
+        <h2 class="is-size-3 mb-5">Esqueceu sua Senha ?</h2>
+        <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+          <%= render "users/shared/error_messages", resource: resource %>
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "users/shared/error_messages", resource: resource %>
+          <div class="field">
+            <%= f.label :email, class: "label" %>
+            <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "input" %>
+          </div>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+          <div class="actions is-flex is-flex-direction-column">
+            <%= f.submit "envie-me instruções de redefinição de senha", class: "button is-info mb-3" %>
+            <hr class="has-background-info">
+            <%= render "users/shared/links" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
   </div>
-
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

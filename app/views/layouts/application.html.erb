@@ -10,7 +10,8 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="">
+    <h1>Layout Application</h1>
     <nav class="navbar has-background-danger" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
         <a class="navbar-item" href="/">
@@ -39,12 +40,10 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons">
-          <a class="button is-info">
+          <%= link_to new_user_registration_path, class:"button is-info" do %>
             <strong>Cadastre-se</strong>
-          </a>
-          <a class="button is-light">
-            Entrar
-          </a>
+          <% end %>
+          <%= link_to "Entrar", user_system_welcome_index_path, class: "button is-light" %>
         </div>
       </div>
     </div>
