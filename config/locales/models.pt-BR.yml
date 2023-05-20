@@ -1,0 +1,23 @@
+activerecord:
+  models:
+    admin:
+      one: "Administradore"
+      other: "Administradores"
+    user:
+      one: "Usuário"
+      other: "Usuários"
+  attributes:
+    admin:
+      id: "Código"
+      email: "Email"
+      password: "Senha"
+      password_confirmation: "Confirmação da senha"
+      created_at: "Criado em"
+      updated_at: "Atualizado em"
+    user:
+      id: "Código"
+      email: "Email"
+      password: "Senha"
+      password_confirmation: "Confirmação da senha"
+      created_at: "Criado em"
+      updated_at: "Atualizado em"
