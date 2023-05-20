@@ -1,0 +1,35 @@
+<h1 class="title">Editando usuário</h1>
+
+<div class="container">
+    <div class="card p-5">
+        <%= form_with(model: [:user_system, @user], url: user_system_perfil_path(@user), local: true) do |form| %>
+        <%= render "admins/shared/error_messages", resource: @user %>
+
+        <div class="field">
+            <%= form.label :email, class:"label" %>
+            <%= form.email_field :email, autofocus: true, autocomplete: "email",  class:"input" %>
+        </div>
+
+          <div class="field">
+            <%= form.label :password, class:"label" do %>
+                Senha <i>(deixe em branco se não quiser alterar)</i>
+            <% end %>
+            <%= form.password_field :password, autocomplete: "new-password", class:"input", placeholder: "Digite a senha" %>
+            <% if @minimum_password_length %>
+            <br />
+            <em><%= @minimum_password_length %> characters minimum</em>
+            <% end %>
+        </div>
+
+        <div class="field">
+            <%= form.label :password_confirmation, class:"label" %>
+            <%= form.password_field :password_confirmation, autocomplete: "new-password", placeholder: "Digite a confirmação da senha", class:"input" %>
+        </div>
+
+    <%= form.submit 'Salvar', class: "button is-info mr-3" %>
+    <%= link_to "Voltar", user_system_perfil_index_path, class:"button" %>
+
+<% end %>
+    </div>
+
+</div>

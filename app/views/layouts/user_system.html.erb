@@ -39,7 +39,7 @@
     <div class="navbar-end">
       <div class="navbar-item">
         <div class="buttons is-flex is-justify-content-center is-align-items-center">
-          <%= link_to "Perfil", nil, class: "button is-info"%>
+          <%= link_to "Perfil", user_system_perfil_index_path, class: "button is-info"%>
           <%= button_to "logout", destroy_user_session_path, method: :delete, class: "button has-background-danger-dark has-text-white" %>
         </div>
       </div>
