@@ -4,6 +4,7 @@
       <div class="box p-5 mt-5 has-background-link-light is-flex is-justify-content-center is-align-items-center is-flex-direction-column">
         <h2 class="is-size-3 mb-5">Login Usuário</h2>
         <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+        <%= render "users/shared/error_messages", resource: resource %>
           <div class="field">
             <%= f.label :email, class: "label" %>
               <div class="control">

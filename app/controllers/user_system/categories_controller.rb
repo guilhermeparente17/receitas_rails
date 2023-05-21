@@ -25,7 +25,7 @@ class UserSystem::CategoriesController < UserSystemController
   
 
   def update
-    if @revenue.update(params_revenue)
+    if @category.update(params_category)
       redirect_to user_system_categories_path, notice: "Categoria atualizada com sucesso!"
     else
       render :edit

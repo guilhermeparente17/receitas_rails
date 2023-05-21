@@ -7,10 +7,13 @@
       </div>
     <% end %>
 
+    <%= notice %>
+
   <div class="field">
     <%= form.label :description, "Nome", class: "label" %>
     <%= form.text_field :description, class: "input", placeholder: "Digite o nome da categoria" %>
   </div>
 
   <%= form.submit title_button,class:"button is-info" %>
+  <%= link_to "Voltar", user_system_categories_path, class:"button is-info" %>
 <% end %>

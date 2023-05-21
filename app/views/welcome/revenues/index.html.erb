@@ -2,9 +2,9 @@
 <h1 class="title mt-5">Receitas</h1>
     <% @categories.each do |category| %>
         <h2 class="title mb-5"><%= category.description %></h2>
-        <div class="is-flex mb-5">
+        <div class="custom-scrollbar cards mb-5">
             <% category.revenues.each do |revenue| %>
-            <div class="card mr-3 mb-3 p-2">
+            <div class="card card-width mr-5 mb-3 p-2">
                 <div class="card-content">
                     <div class="media">
                         <div class="media-content">
