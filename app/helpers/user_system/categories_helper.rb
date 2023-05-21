@@ -1,0 +1,2 @@
+module UserSystem::CategoriesHelper
+end

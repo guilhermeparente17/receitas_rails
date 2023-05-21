@@ -1,0 +1,33 @@
+<h1 class="title mt-5">Categorias</h1>
+
+<% if notice %>
+    <div class="notification is-success">
+        <%= notice%>
+    </div>
+<% end %>
+
+<%= link_to "Cadastrar", new_user_system_category_path, class:"button is-info mb-3"%>
+
+<table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
+    <thead>
+        <tr>
+            <td>ID</td>
+            <td>Título</td>
+            <td colspan="3"></td>
+        </tr>
+    </thead>
+    <tbody>
+    <% @categories.each do |category| %>
+        <tr>
+            <td><%= category.id %></td>
+            <td><%= category.description %></td>
+            <td class="is-flex">
+                <%= link_to "Mostrar", nil, class:"button is-primary mr-3"%>
+                <%= link_to "Editar", edit_user_system_category_path(category), class:"button is-info mr-3"%>
+                <%= button_to "Remover", user_system_category_path(category), method: :delete, class:"button is-danger", 
+                data: {turbo_confirm: "Tem certeza que deseja remover a recita #{category.description} ?"}%>
+            </td>
+        </tr>
+    <% end %>
+    </tbody>
+</table>
