@@ -1,6 +1,6 @@
 class UserSystem::RevenuesController < UserSystemController
   before_action :set_revenue, only: [:edit]
-  before_action :set_category_type, only: [:new, :create]
+  before_action :set_category_type, only: [:new, :create, :edit]
 
   def index
     @revenues = current_user.revenues.all

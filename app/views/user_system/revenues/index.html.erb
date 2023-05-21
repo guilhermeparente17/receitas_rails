@@ -14,6 +14,7 @@
             <td>ID</td>
             <td>Título</td>
             <td>Descrição</td>
+            <td>Categoria</td>
             <td colspan="2"></td>
         </tr>
     </thead>
@@ -23,6 +24,7 @@
             <td><%= revenue.id %></td>
             <td><%= revenue.title %></td>
             <td><%= revenue.description %></td>
+            <td><%= revenue.category.description %></td>
             <td>
                 <%= link_to "Mostrar", nil, class:"button is-primary mr-3"%>
 
