@@ -1,0 +1,15 @@
+<h1 class="title"><%= title %></h1>
+
+<%= form_with(model: revenue, url: user_system_revenue_path(revenue), local: true) do |form| %>
+  <div class="field">
+    <%= form.label :title, class: "label" %>
+    <%= form.text_field :title, class: "input" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :description, class: "label" %>
+    <%= form.text_area :description, class: "input", rows: "4" %>
+  </div>
+
+  <%= form.submit title_button,class:"button is-info" %>
+<% end %>

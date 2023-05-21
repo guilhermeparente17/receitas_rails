@@ -9,6 +9,8 @@ namespace :dev do
       show_spinner("Criando BD...") {%x(rails db:create)}
       show_spinner("Migrando BD...") {%x(rails db:migrate)}
       show_spinner("Criando usuário padrão...") {%x(rails dev:add_user_default)}
+      show_spinner("Criando categorias...") {%x(rails dev:add_categories)}
+      show_spinner("Criando receitas...") {%x(rails dev:add_revenues)}
     else
       puts "Você não está no ambiente de desenvolvimento"
     end
@@ -20,6 +22,23 @@ namespace :dev do
       email: "admin@admin.com",
       password: DEFAULT_PASSWORD,
       password_confirmation: DEFAULT_PASSWORD
+    )
+  end
+
+  desc "Adicionar categorias"
+  task add_categories: :environment do
+    Category.create!(
+      description: "Comida Japonesa"
+    )
+  end
+
+  desc "Adicionar receitas"
+  task add_revenues: :environment do
+    Revenue.create!(
+      title: "Comida Japonesa",
+      description: "Muito gostosa",
+      category: Category.first,
+      user: User.first
     )
   end
 

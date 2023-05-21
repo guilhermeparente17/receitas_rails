@@ -1,0 +1,2 @@
+module UserSystem::RevenuesHelper
+end
