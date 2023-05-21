@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     get 'perfil/index'
     get 'welcome/index'
     resources :perfil, only: [:index, :edit, :update]
-    resources :revenues, only: [:index, :edit, :update, :new, :create]
+    resources :revenues, only: [:index, :edit, :update, :new, :create, :destroy]
   end
   namespace :admin_system do
     get 'welcome/index'

@@ -15,7 +15,7 @@
             <td>Título</td>
             <td>Descrição</td>
             <td>Categoria</td>
-            <td colspan="2"></td>
+            <td colspan="3"></td>
         </tr>
     </thead>
     <tbody>
@@ -23,14 +23,13 @@
         <tr>
             <td><%= revenue.id %></td>
             <td><%= revenue.title %></td>
-            <td><%= revenue.description %></td>
+            <td><%= truncate(revenue.description, :length => 20) %></td>
             <td><%= revenue.category.description %></td>
-            <td>
+            <td class="is-flex">
                 <%= link_to "Mostrar", nil, class:"button is-primary mr-3"%>
-
                 <%= link_to "Editar", edit_user_system_revenue_path(revenue), class:"button is-info mr-3"%>
-
-                <%= link_to "Remover", nil, class:"button is-danger"%>
+                <%= button_to "Remover", user_system_revenue_path(revenue), method: :delete, class:"button is-danger", 
+                data: {turbo_confirm: "Tem certeza que deseja remover a recita #{revenue.title} ?"}%>
             </td>
         </tr>
     <% end %>

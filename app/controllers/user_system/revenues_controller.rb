@@ -1,5 +1,5 @@
 class UserSystem::RevenuesController < UserSystemController
-  before_action :set_revenue, only: [:edit]
+  before_action :set_revenue, only: [:edit, :destroy]
   before_action :set_category_type, only: [:new, :create, :edit]
 
   def index
@@ -29,6 +29,15 @@ class UserSystem::RevenuesController < UserSystemController
       redirect_to user_system_revenues_path, notice: "Receita atualizada com sucesso!"
     else
       render :edit
+    end
+  end
+
+  def destroy
+    @revenue = current_user.revenues.find(params[:id])
+    if @revenue.destroy
+      redirect_to user_system_revenues_path, notice: "Receita apagada com sucesso!"
+    else
+      render :index
     end
   end
 
