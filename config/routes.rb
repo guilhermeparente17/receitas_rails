@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  namespace :welcome do
+    get 'revenues/index'
+  end
   namespace :user_system do
     get 'perfil/index'
     get 'welcome/index'
