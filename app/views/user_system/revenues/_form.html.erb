@@ -1,14 +1,19 @@
 <h1 class="title"><%= title %></h1>
 
-<%= form_with(model: revenue, url: user_system_revenue_path(revenue), local: true) do |form| %>
+<%= form_with(model: revenue, url: link, local: true) do |form| %>
   <div class="field">
     <%= form.label :title, class: "label" %>
-    <%= form.text_field :title, class: "input" %>
+    <%= form.text_field :title, class: "input", placeholder: "Digite o nome da receita" %>
   </div>
 
   <div class="field">
     <%= form.label :description, class: "label" %>
-    <%= form.text_area :description, class: "input", rows: "4" %>
+    <%= form.text_area :description, class: "input", rows: 4, placeholder: "Digite a descrição da receita" %>
+  </div>
+
+  <div class="field">
+    <%= form.label :category, class:"label" %>
+    <%= form.select("category_id", @category_options, { include_blank: 'Selecione...' }, class:"select") %>
   </div>
 
   <%= form.submit title_button,class:"button is-info" %>
