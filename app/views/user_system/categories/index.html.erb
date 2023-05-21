@@ -25,7 +25,7 @@
                 <%= link_to "Mostrar", nil, class:"button is-primary mr-3"%>
                 <%= link_to "Editar", edit_user_system_category_path(category), class:"button is-info mr-3"%>
                 <%= button_to "Remover", user_system_category_path(category), method: :delete, class:"button is-danger", 
-                data: {turbo_confirm: "Tem certeza que deseja remover a recita #{category.description} ?"}%>
+                data: {turbo_confirm: "Tem certeza que deseja remover a categoria #{category.description} ?"}%>
             </td>
         </tr>
     <% end %>

@@ -17,7 +17,9 @@ class UserSystem::CategoriesController < UserSystemController
     if @category.save # Salva a receita no banco de dados
       redirect_to user_system_categories_path, notice: "Categoria criada com sucesso!"
     else
-      render :new
+      flash[:alert] = "Ocorreu um erro ao criar a categoria. Nome não pode ficar em branco."
+      redirect_to new_user_system_category_path
+      # render :new # Não consegui exibiar a mensagem de rro usando render
     end
   end
   

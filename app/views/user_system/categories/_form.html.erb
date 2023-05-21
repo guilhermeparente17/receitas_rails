@@ -1,0 +1,16 @@
+<h1 class="title"><%= title %></h1>
+
+<%= form_with(model: category, url: link, local: true) do |form| %>
+  <% flash.each do |type, message| %>
+      <div class="flash notification is-danger <%= type %>">
+        <%= message %>
+      </div>
+    <% end %>
+
+  <div class="field">
+    <%= form.label :description, "Nome", class: "label" %>
+    <%= form.text_field :description, class: "input", placeholder: "Digite o nome da categoria" %>
+  </div>
+
+  <%= form.submit title_button,class:"button is-info" %>
+<% end %>
