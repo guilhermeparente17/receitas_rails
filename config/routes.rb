@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   namespace :welcome do
     get 'revenues/index'
+    get 'revenues/show/:id', to: "revenues#show"
   end
   namespace :user_system do
     get 'perfil/index'

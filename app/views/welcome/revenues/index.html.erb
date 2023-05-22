@@ -1,4 +1,4 @@
-<div class="container">
+
 <h1 class="title mt-5">Receitas</h1>
     <% @categories.each do |category| %>
         <h2 class="title mb-5"><%= category.description %></h2>
@@ -20,11 +20,11 @@
                 </div>
 
                 <div class="buttons is-flex is-justify-content-center mb-2">
-                    <%= link_to "Visualizar", nil, class:"button is-info" %>
+                    <%= link_to "Visualizar", welcome_path(revenue), class:"button is-info" %>
                 </div>
             </div>
         <% end %>
         </div>
     <% end %>
-</div>
+
 

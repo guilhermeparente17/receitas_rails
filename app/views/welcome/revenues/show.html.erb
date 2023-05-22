@@ -1,0 +1,29 @@
+<h1 class="title mt-5"><%= @revenue.title %></h1>
+
+<%#= @revenue.inspect %>
+
+<div class="card">
+  <div class="card-content">
+    <div class="media">
+      <div class="media-left">
+        <figure class="image is-48x48">
+          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+        </figure>
+      </div>
+      <div class="media-content">
+        <p class="title is-4">
+           Nome <%= link_to @revenue.user.email, nil %>
+        </p>
+        <p class="subtitle is-6"><%= link_to @revenue.user.email, nil %></p>
+      </div>
+    </div>
+
+    <div class="content">
+     <%= @revenue.description %>
+    </div>
+
+    <div class="buttons">
+        <%= link_to "Voltar", welcome_revenues_index_path, class:"button is-info"%>
+    </div>
+  </div>
+</div>
